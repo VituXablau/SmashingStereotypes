@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     [SerializeField] private int timeToSpawn;
 
-    [SerializeField] private GameObject[] playersPrefabs;
+    [SerializeField] private GameObject[] playersPrefabs, player1Frames, player2Frames, player1Lives, player2Lives;
     [SerializeField] private GameObject[] itensPrefabs;
     private Coroutine spawnCoroutine;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [HideInInspector] public float p1Knockback, p2Knockback;
     [HideInInspector] public int p1Lives, p2Lives;
 
-    [SerializeField] private TextMeshProUGUI p1LivesTxt, p2LivesTxt, p1KnockbackTxt, p2KnockbackTxt;
+    [SerializeField] private TextMeshProUGUI p1KnockbackTxt, p2KnockbackTxt, p1KnockbackShadowTxt, p2KnockbackShadowTxt;
 
     private bool isGameOver = false;
 
@@ -44,6 +44,21 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient)
             spawnCoroutine = StartCoroutine(SpawnItens(timeToSpawn));
+
+        foreach (GameObject frame in player1Frames)
+        {
+            if (frame.name == p1Name)
+            {
+                frame.SetActive(true);
+            }
+        }
+        foreach (GameObject frame in player2Frames)
+        {
+            if (frame.name == p2Name)
+            {
+                frame.SetActive(true);
+            }
+        }
     }
 
     void Update()
@@ -159,11 +174,28 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     void UpdateUI()
     {
-        p1KnockbackTxt.text = "P1: " + p1Knockback;
-        p2KnockbackTxt.text = "P2: " + p2Knockback;
+        p1KnockbackTxt.text = p1Knockback + "%";
+        p2KnockbackTxt.text = p2Knockback + "%";
+        p1KnockbackShadowTxt.text = p1Knockback + "%";
+        p2KnockbackShadowTxt.text = p2Knockback + "%";
 
-        p1LivesTxt.text = "Vidas: " + p1Lives;
-        p2LivesTxt.text = "Vidas: " + p2Lives;
+        UpdateLivesUI(player1Lives, p1Lives);
+        UpdateLivesUI(player2Lives, p2Lives);
+    }
+
+    void UpdateLivesUI(GameObject[] playerLives, int lives)
+    {
+        for (int i = 0; i < playerLives.Length; i++)
+        {
+            if (i < lives)
+            {
+                playerLives[i].SetActive(true);
+            }
+            else
+            {
+                playerLives[i].SetActive(false);
+            }
+        }
     }
 
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)

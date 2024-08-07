@@ -155,7 +155,7 @@ MonoBehaviour:
   itemID: BRA
   damage: 20
   freeze: 0
-  timeToHarm: 0.4
+  timeToHarm: 1
   damageCollider: {fileID: 7217257625732066632}
   vfx: {fileID: 0}
 --- !u!95 &4377857992507291132

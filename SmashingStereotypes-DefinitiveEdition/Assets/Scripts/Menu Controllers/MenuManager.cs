@@ -82,7 +82,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("InitialMenu");
+        SceneManager.LoadScene("MainMenu");
         PhotonNetwork.Disconnect();
     }
 }

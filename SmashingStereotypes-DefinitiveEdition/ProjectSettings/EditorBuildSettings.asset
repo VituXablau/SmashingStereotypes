@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menus/InitialMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 8e47cad466112f54986df851052bcd59
   - enabled: 1
     path: Assets/Scenes/Menus/Lobby.unity
@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Scoreboard.unity
     guid: 7e43b009303d3524aaa9c5da520c1fde
+  - enabled: 1
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: 00e367f50bbaebc459e77146661bdb78
+  - enabled: 1
+    path: Assets/Scenes/Menus/CharacterCards.unity
+    guid: d41336419ee79134c9b5ba339e4d4956
+  - enabled: 1
+    path: Assets/Scenes/Menus/Tutorial.unity
+    guid: d7634f653a424a04caaf992eb1a7d990
   m_configObjects: {}
