@@ -45,7 +45,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         moveSpeed = 20f;
         jumpForce = 20f;
-        dashForce = 30f;
+        dashForce = 25f;
         baseHitForce = 25f;
         jumpCount = 0;
         dashCount = 0;
@@ -166,14 +166,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!IsGrounded() && dirY < 0)
         {
-            rb.AddForce(new Vector2(0, dirY * (moveSpeed * 1.5f)), ForceMode.Force);
+            rb.AddForce(new Vector2(0, dirY * (moveSpeed * 10f)), ForceMode.Force);
         }
 
         if (IsGrounded())
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         else
         {
-            rb.AddForce(new Vector2(dirX * (moveSpeed * 1.5f), 0), ForceMode.Force);
+            rb.AddForce(new Vector2(dirX * (moveSpeed * 10f), 0), ForceMode.Force);
 
             float velocityX = Mathf.Clamp(rb.velocity.x, -moveSpeed, moveSpeed);
             rb.velocity = new Vector2(velocityX, rb.velocity.y);
@@ -191,7 +191,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (IsGrounded() || jumpCount < 2)
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             anim.SetTrigger("Jump");
             jumpCount += 1;
@@ -208,6 +208,7 @@ public class PlayerBehaviour : MonoBehaviour
             isDashing = true;
             gameObject.layer = 8;
             rb.useGravity = false;
+            rb.velocity = Vector3.zero;
             rb.AddForce(new Vector2(transform.localScale.x * dashForce, 0f), ForceMode.Impulse);
             anim.SetTrigger("Dash");
 
