@@ -15,18 +15,14 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
     {
         string playerWin = null;
 
-        if(GameManager.Instance.p1Lives > 0)
+        if(GameManager.Instance.p1Lives >= 0)
             playerWin = GameManager.Instance.p1Name;
-        else if(GameManager.Instance.p2Lives > 0)
+        else if(GameManager.Instance.p2Lives >= 0)
             playerWin = GameManager.Instance.p2Name;
         
         string player1 = GameManager.Instance.p1Name;
         string player2 = GameManager.Instance.p2Name;
 
-        // Log para verificar os nomes dos jogadores
-        Debug.Log($"Player 1: {player1}, Player 2: {player2}");
-
-        // Determina o texto do título
         switch (playerWin)
         {
             case "BRA":
@@ -47,10 +43,6 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 break;
         }
 
-        // Log para verificar os valores das vidas
-        Debug.Log($"p1Lives: {GameManager.Instance.p1Lives}, p2Lives: {GameManager.Instance.p2Lives}");
-
-        // Condições para definir a vitória e a derrota
         if (GameManager.Instance.p1Lives > 0 && GameManager.Instance.p2Lives < 0)
         {
             foreach (GameObject p1 in imagesWin)
@@ -58,7 +50,6 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 if (p1.name == player1)
                 {
                     p1.SetActive(true);
-                    Debug.Log($"{player1} ganhou!");
                 }
             }
             foreach (GameObject p2 in imagesLose)
@@ -66,7 +57,6 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 if (p2.name == player2)
                 {
                     p2.SetActive(true);
-                    Debug.Log($"{player2} perdeu!");
                 }
             }
         }
@@ -77,7 +67,6 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 if (p2.name == player2)
                 {
                     p2.SetActive(true);
-                    Debug.Log($"{player2} ganhou!");
                 }
             }
             foreach (GameObject p1 in imagesLose)
@@ -85,7 +74,6 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 if (p1.name == player1)
                 {
                     p1.SetActive(true);
-                    Debug.Log($"{player1} perdeu!");
                 }
             }
         }
