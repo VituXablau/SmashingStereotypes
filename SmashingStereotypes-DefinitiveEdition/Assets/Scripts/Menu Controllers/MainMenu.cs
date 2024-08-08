@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void CharCards()
     {
-        SceneManager.LoadScene("CharacterCards");
+        SceneManager.LoadScene("CardsMenu");
     }
 
     public void Credits()
