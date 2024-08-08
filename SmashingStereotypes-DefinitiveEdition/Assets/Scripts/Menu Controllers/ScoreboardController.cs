@@ -43,7 +43,7 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 break;
         }
 
-        if (GameManager.Instance.p1Lives > 0 && GameManager.Instance.p2Lives < 0)
+        if (GameManager.Instance.p1Lives >= 0 && GameManager.Instance.p2Lives < 0)
         {
             foreach (GameObject p1 in imagesWin)
             {
@@ -60,7 +60,7 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
                 }
             }
         }
-        else if (GameManager.Instance.p1Lives < 0 && GameManager.Instance.p2Lives > 0)
+        else if (GameManager.Instance.p1Lives < 0 && GameManager.Instance.p2Lives >= 0)
         {
             foreach (GameObject p2 in imagesWin)
             {

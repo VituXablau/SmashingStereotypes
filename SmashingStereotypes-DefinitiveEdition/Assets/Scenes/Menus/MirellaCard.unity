@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,8 +294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -217}
-  m_SizeDelta: {x: 305.9662, y: 124.1764}
+  m_AnchoredPosition: {x: 157.0181, y: -406}
+  m_SizeDelta: {x: 640.0023, y: 375.058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159085046
 MonoBehaviour:
@@ -321,7 +321,14 @@ MonoBehaviour:
 
     Nacionalidade: Brasileira
 
-    Idade: 26'
+    Nascimento:
+    14/02/1998
+
+    Idade: 26
+
+    Altura: 1,63 m
+
+    Sexo: Feminino'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 514083295cb52734a9f7a6ddc8b7df14, type: 2}
   m_sharedMaterial: {fileID: 4277887235726922931, guid: 514083295cb52734a9f7a6ddc8b7df14, type: 2}
@@ -384,7 +391,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -228.24919, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.66430676, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
