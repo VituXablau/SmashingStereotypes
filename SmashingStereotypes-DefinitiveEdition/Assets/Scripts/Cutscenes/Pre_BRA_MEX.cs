@@ -9,7 +9,6 @@ public class Pre_BRA_MEX : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject BRA, MEX, DIA, VS, BG, WS;
-    int random;
     public AudioSource audioSource;
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
@@ -77,7 +76,8 @@ public class Pre_BRA_MEX : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+            if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 
     }

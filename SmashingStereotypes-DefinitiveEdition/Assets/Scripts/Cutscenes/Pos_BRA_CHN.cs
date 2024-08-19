@@ -40,7 +40,7 @@ public class Pos_BRA_CHN : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        
+
         DIA.GetComponent<Animator>().SetTrigger("Left");
         BRA.GetComponent<Animator>().SetTrigger("Happy");
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
@@ -49,7 +49,7 @@ public class Pos_BRA_CHN : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
 
-       PhotonNetwork.NickName = "";
+        PhotonNetwork.NickName = "";
         SceneManager.LoadScene("Lobby");
 
 

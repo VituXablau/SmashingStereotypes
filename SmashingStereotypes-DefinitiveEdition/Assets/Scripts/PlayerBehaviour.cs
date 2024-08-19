@@ -17,6 +17,9 @@ public class PlayerBehaviour : MonoBehaviour
     public Animator anim;
     private PhotonView view;
 
+    public AudioSource audioSource;
+    public AudioClip sfxJump, sfxLightAir, sfxLightGround, sfxHeavyAir, sfxHeavyGround, sfxDamage, sfxDash;
+
     //Variáveis utilizadas nas mecânicas do personagem
     private Vector2 direction;
     private float moveSpeed, jumpForce, dashForce;
@@ -65,6 +68,57 @@ public class PlayerBehaviour : MonoBehaviour
         isAttacking = false;
         isHit = false;
         hasItem = false;
+
+         // Configurando efeitos sonoros
+        sfxDash = Resources.Load<AudioClip>("SFX_Dash");
+        audioSource = GetComponent<AudioSource>();
+
+        switch (characterID)
+        {
+            case "BRA":
+
+                sfxJump = Resources.Load<AudioClip>("SFX_Mirella_Jump");
+                sfxLightAir = Resources.Load<AudioClip>("SFX_Mirella_Light_Air");
+                sfxLightGround = Resources.Load<AudioClip>("SFX_Mirella_Light_Ground");
+                sfxHeavyAir = Resources.Load<AudioClip>("SFX_Mirella_Heavy_Air");
+                sfxHeavyGround = Resources.Load<AudioClip>("SFX_Mirella_Heavy_Ground");
+                sfxDamage = Resources.Load<AudioClip>("SFX_Mirella_Damage");
+
+
+                break;
+            case "MEX":
+
+                sfxJump = Resources.Load<AudioClip>("SFX_Ernesto_Jump");
+                sfxLightAir = Resources.Load<AudioClip>("SFX_Ernesto_Light_Air");
+                sfxLightGround = Resources.Load<AudioClip>("SFX_Ernesto_Light_Ground");
+                sfxHeavyAir = Resources.Load<AudioClip>("SFX_Ernesto_Heavy_Air");
+                sfxHeavyGround = Resources.Load<AudioClip>("SFX_Ernesto_Heavy_Ground");
+                sfxDamage = Resources.Load<AudioClip>("SFX_Ernesto_Damage");
+
+                break;
+            case "IND":
+
+                sfxJump = Resources.Load<AudioClip>("SFX_Deepak_Jump");
+                sfxLightAir = Resources.Load<AudioClip>("SFX_Deepak_Light_Air");
+                sfxLightGround = Resources.Load<AudioClip>("SFX_Deepak_Light_Ground");
+                sfxHeavyAir = Resources.Load<AudioClip>("SFX_Deepak_Heavy_Air");
+                sfxHeavyGround = Resources.Load<AudioClip>("SFX_Deepak_Heavy_Ground");
+                sfxDamage = Resources.Load<AudioClip>("SFX_Deepak_Damage");
+
+                break;
+            case "CHN":
+
+                sfxJump = Resources.Load<AudioClip>("SFX_Xiuying_Jump");
+                sfxLightAir = Resources.Load<AudioClip>("SFX_Xiuying_Light_Air");
+                sfxLightGround = Resources.Load<AudioClip>("SFX_Xiuying_Light_Ground");
+                sfxHeavyAir = Resources.Load<AudioClip>("SFX_Xiuying_Heavy_Air");
+                sfxHeavyGround = Resources.Load<AudioClip>("SFX_Xiuying_Heavy_Ground");
+                sfxDamage = Resources.Load<AudioClip>("SFX_Xiuying_Damage");
+
+
+
+                break;
+        }
 
         // Pegando a posição inicial do jogador
         startPos = transform.position;
@@ -228,6 +282,7 @@ public class PlayerBehaviour : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             anim.SetTrigger("Jump");
+            audioSource.PlayOneShot(sfxJump);
             jumpCount += 1;
         }
     }
@@ -248,6 +303,7 @@ public class PlayerBehaviour : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.AddForce(new Vector2(transform.localScale.x * dashForce, 0f), ForceMode.Impulse);
             anim.SetTrigger("Dash");
+            audioSource.PlayOneShot(sfxDash);
 
             yield return new WaitForSeconds(0.4f);
             // Retornando aos valores padrões
@@ -268,12 +324,15 @@ public class PlayerBehaviour : MonoBehaviour
         {
             case "LightGround":
                 rb.velocity = new Vector2(transform.localScale.x * 5, 0);
+                audioSource.PlayOneShot(sfxLightGround);
                 break;
             case "HeavyGround":
                 rb.velocity = Vector2.zero;
+                audioSource.PlayOneShot(sfxHeavyGround);
                 break;
             case "HeavyAir":
                 rb.velocity = Vector2.zero;
+                audioSource.PlayOneShot(sfxHeavyAir);
                 rb.AddForce(new Vector2(0, -1 * (moveSpeed * 2)), ForceMode.Impulse);
                 break;
         }
@@ -351,6 +410,8 @@ public class PlayerBehaviour : MonoBehaviour
         // Recebendo dano (limitado entre 0 e 200) e executando a coroutine que atordoa o personagem
         hitPoints = Mathf.Clamp(hitPoints + damageTaken, 0, 200);
         StartCoroutine(Stagger());
+        audioSource.PlayOneShot(sfxDamage);
+
     }
 
     IEnumerator Stagger()
@@ -366,7 +427,9 @@ public class PlayerBehaviour : MonoBehaviour
     {
         // Executando a lógica de escalonamento da força que projeta o personagem para longe e retornando o valor multiplicador da força
         float knockbackMultiplier = Mathf.Pow(2f, (float)hitPoints / (float)maxHitPoints) - 1f;
-        knockbackMultiplier = Mathf.Clamp(knockbackMultiplier, 0f, 2.5f);
+        //knockbackMultiplier = Mathf.Clamp(knockbackMultiplier, 0f, 2.5f);
+        // uhh miau !! xd siga em frente nada para si ver aqui !!
+        knockbackMultiplier = Mathf.Clamp(knockbackMultiplier, 0f, 9.99f);
         hitForce = baseHitForce * knockbackMultiplier;
         float knockbackPercentage = knockbackMultiplier * 100f;
         return (int)knockbackPercentage;

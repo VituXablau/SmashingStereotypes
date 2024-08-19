@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class Pos_IND_MEX : MonoBehaviour
 {
     // Start is called before the first frame update
-   // Start is called before the first frame update
+    // Start is called before the first frame update
     // Start is called before the first frame update
     public GameObject IND, MEX, DIA;
     public TextMeshProUGUI dialog;
@@ -51,7 +51,7 @@ public class Pos_IND_MEX : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        
+
         DIA.GetComponent<Animator>().SetTrigger("Right");
         IND.GetComponent<Animator>().SetTrigger("Angry");
         MEX.GetComponent<Animator>().SetTrigger("Bump");
@@ -59,7 +59,7 @@ public class Pos_IND_MEX : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-       PhotonNetwork.NickName = "";
+        PhotonNetwork.NickName = "";
         SceneManager.LoadScene("Lobby");
 
     }

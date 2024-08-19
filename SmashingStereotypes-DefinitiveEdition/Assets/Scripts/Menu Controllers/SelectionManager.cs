@@ -14,7 +14,7 @@ public class SelectionManager : MonoBehaviour
     private Player player1, player2;
 
     public static string nextMap;
-    
+
     int random;
 
     //Desativando o botão de jogar quando entra na cena
@@ -54,116 +54,123 @@ public class SelectionManager : MonoBehaviour
     public void StartGame()
     {
         //Aleatorizando a arena de batalha com base nos personagens escolhidos
-       // int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
+        // int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
         //PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
-    
-      //  nextMap = PhotonNetwork.PlayerList[indexMap].NickName;
+
+        //  nextMap = PhotonNetwork.PlayerList[indexMap].NickName;
 
 
         if ((player1.NickName == "BRA") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "BRA"))
         {
-         
+
 
             random = UnityEngine.Random.Range(1, 3);
-          
+
             switch (random)
             {
                 case 1:
-                nextMap = "BRA";
-                break;
+                    nextMap = "BRA";
+                    break;
                 case 2:
-               nextMap = "CHN";
-                break;
+                    nextMap = "CHN";
+                    break;
             }
-               PhotonNetwork.LoadLevel("Pre_BRA_CHN");
+            PhotonNetwork.LoadLevel("Pre_BRA_CHN");
+
+            
         }
         else if ((player1.NickName == "BRA") && (player2.NickName == "IND") || (player1.NickName == "IND") && (player2.NickName == "BRA"))
         {
-       
 
-             random = UnityEngine.Random.Range(1, 3);
-          
+
+            random = UnityEngine.Random.Range(1, 3);
+
             switch (random)
             {
                 case 1:
-                nextMap = "BRA";
-                break;
+                    nextMap = "BRA";
+                    break;
                 case 2:
-               nextMap = "IND";
-                break;
-                
+                    nextMap = "IND";
+                    break;
+
             }
-                 PhotonNetwork.LoadLevel("Pre_BRA_IND");
+            PhotonNetwork.LoadLevel("Pre_BRA_IND");
         }
         else if ((player1.NickName == "BRA") && (player2.NickName == "MEX") || (player1.NickName == "MEX") && (player2.NickName == "BRA"))
         {
 
-            
-             random = UnityEngine.Random.Range(1, 3);
-          
+
+            random = UnityEngine.Random.Range(1, 3);
+
             switch (random)
             {
                 case 1:
-                nextMap = "BRA";
-                break;
+                    nextMap = "BRA";
+                    break;
                 case 2:
-               nextMap = "MEX";
-                break;
-                
+                    nextMap = "MEX";
+                    break;
+
             }
 
             PhotonNetwork.LoadLevel("Pre_BRA_MEX");
         }
         else if ((player1.NickName == "IND") && (player2.NickName == "MEX") || (player1.NickName == "MEX") && (player2.NickName == "IND"))
         {
-            
-             random = UnityEngine.Random.Range(1, 3);
-          
+
+            random = UnityEngine.Random.Range(1, 3);
+
             switch (random)
             {
                 case 1:
-                nextMap = "MEX";
-                break;
+                    nextMap = "IND";
+                    break;
                 case 2:
-               nextMap = "IND";
-                break;
-                
+                    nextMap = "MEX";
+                    break;
+
             }
 
             PhotonNetwork.LoadLevel("Pre_IND_MEX");
         }
+
+
+
         else if ((player1.NickName == "IND") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "IND"))
-        {   
-            
-             random = UnityEngine.Random.Range(1, 3);
-          
+        {
+
+            random = UnityEngine.Random.Range(1, 3);
+
             switch (random)
             {
                 case 1:
-                nextMap = "CHN";
-                break;
+                    nextMap = "CHN";
+                    break;
                 case 2:
-               nextMap = "IND";
-                break;
-                
+                    nextMap = "IND";
+                    break;
+
             }
 
             PhotonNetwork.LoadLevel("Pre_IND_CHN");
         }
-           else if ((player1.NickName == "MEX") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "MEX"))
+
+
+        else if ((player1.NickName == "MEX") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "MEX"))
         {
-            
-             random = UnityEngine.Random.Range(1, 3);
-          
+
+            random = UnityEngine.Random.Range(1, 3);
+
             switch (random)
             {
                 case 1:
-                nextMap = "MEX";
-                break;
+                    nextMap = "MEX";
+                    break;
                 case 2:
-               nextMap = "CHN";
-                break;
-                
+                    nextMap = "CHN";
+                    break;
+
             }
 
             PhotonNetwork.LoadLevel("Pre_MEX_CHN");

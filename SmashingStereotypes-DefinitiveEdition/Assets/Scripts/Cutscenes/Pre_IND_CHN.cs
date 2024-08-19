@@ -69,7 +69,7 @@ public class Pre_IND_CHN : MonoBehaviour
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
 
-
+           if (PhotonNetwork.IsMasterClient)
         PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 

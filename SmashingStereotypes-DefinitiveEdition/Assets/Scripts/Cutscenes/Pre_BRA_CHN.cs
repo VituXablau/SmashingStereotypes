@@ -8,12 +8,14 @@ using Photon.Realtime;
 public class Pre_BRA_CHN : MonoBehaviour
 {
     public GameObject BRA, CHN, DIA, VS, BG, WS;
+    public AudioSource audioSource;
+    public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         VS.SetActive(false);
         WS.SetActive(false);
         StartCoroutine(Cutscene());
@@ -63,14 +65,19 @@ public class Pre_BRA_CHN : MonoBehaviour
         BG.SetActive(false);
         VS.SetActive(true);
         WS.SetActive(true);
+        WS.GetComponent<Animator>().SetTrigger("Blink");
 
-         yield return new WaitForSeconds(waitTime);
+        audioSource.PlayOneShot(vsMusic);
 
-         WS.GetComponent<Animator>().SetTrigger("Whiten");
-         
-         PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
-         
+        yield return new WaitForSeconds(waitTime);
+
+        WS.GetComponent<Animator>().SetTrigger("Whiten");
+
+           if (PhotonNetwork.IsMasterClient)
+        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+
+
 
 
 

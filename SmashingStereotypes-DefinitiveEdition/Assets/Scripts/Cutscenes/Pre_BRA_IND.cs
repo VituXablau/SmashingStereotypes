@@ -89,7 +89,8 @@ public class Pre_Bra_IND : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
-
+        
+           if (PhotonNetwork.IsMasterClient)
         PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
     }
