@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32137772, g: 0.3523944, b: 0.4339623, a: 1}
+  m_Color: {r: 0.22369805, g: 0.059362777, b: 0.4339623, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 410850978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d4036df6252d54ba7a556e41af4dc6, type: 3}
+  m_Script: {fileID: 11500000, guid: de2cbb9fadacfd3479bf22876e3d2caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IND: {fileID: 2829889611385120063}
@@ -775,6 +775,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 09c03d653139cad4a8fe2de46a996d39, type: 3}
+    - target: {fileID: 2814618312621582408, guid: a9e20804fbd3ab8428e3c9c140a2c473, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814618312621582408, guid: a9e20804fbd3ab8428e3c9c140a2c473, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6367924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814618312621582408, guid: a9e20804fbd3ab8428e3c9c140a2c473, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9338511
+      objectReference: {fileID: 0}
     - target: {fileID: 8490265641730321492, guid: a9e20804fbd3ab8428e3c9c140a2c473, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1071,6 +1083,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 274943119497c494f96b3c488433f959, type: 3}
+    - target: {fileID: 7442013905329721399, guid: 06470bf00e4c19f4f86aa4c3d086bdcc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442013905329721399, guid: 06470bf00e4c19f4f86aa4c3d086bdcc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7688679
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442013905329721399, guid: 06470bf00e4c19f4f86aa4c3d086bdcc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9867679
+      objectReference: {fileID: 0}
     - target: {fileID: 8201638464150130267, guid: 06470bf00e4c19f4f86aa4c3d086bdcc, type: 3}
       propertyPath: m_Name
       value: Cutscene_Xiuying
