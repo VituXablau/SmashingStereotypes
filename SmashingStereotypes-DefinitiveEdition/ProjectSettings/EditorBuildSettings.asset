@@ -21,35 +21,38 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Pre_BRA_CHN.unity
     guid: e35a750c8fb78f0448e335045589f0e9
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pre_BRA_MEX.unity
+    guid: 20bb0b5a59b7ba1479566cd3dc5d5966
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pre_BRA_IND.unity
+    guid: 880bcc319916b3c4ea87cfa3d064b8ab
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pre_IND_CHN.unity
+    guid: d177973ee1a369a4e9a8539f59623729
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pre_IND_MEX.unity
+    guid: 6dbb0077f65b6cc4298dc5d65db6d0e4
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pre_MEX_CHN.unity
+    guid: 056186dd7e59b664b89407adae823917
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pos_BRA_CHN.unity
+    guid: e45a9c3666002ea4d87e15ae37b75e01
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pos_BRA_MEX.unity
+    guid: 75cef71954cbf1b459f10d4686c271a4
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pos_BRA_IND.unity
+    guid: 5d984df3e2e48014b932098b66c2a9f2
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pos_IND_CHN.unity
+    guid: a67a893a3eff0ec43b8a28daa42bda8d
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/Pos_IND_MEX.unity
     guid: 5cc021b6e5ec6794b96b8ea98b1f7ebd
   - enabled: 1
     path: Assets/Scenes/Cutscenes/Pos_MEX_CHN.unity
     guid: b8c634127fcaf7a47ba93e68c087bb54
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pre_BRA_IND.unity
-    guid: 880bcc319916b3c4ea87cfa3d064b8ab
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pre_MEX_CHN.unity
-    guid: 056186dd7e59b664b89407adae823917
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pos_IND_CHN.unity
-    guid: a67a893a3eff0ec43b8a28daa42bda8d
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pos_BRA_CHN.unity
-    guid: e45a9c3666002ea4d87e15ae37b75e01
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pos_BRA_IND.unity
-    guid: 5d984df3e2e48014b932098b66c2a9f2
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pos_BRA_MEX.unity
-    guid: 75cef71954cbf1b459f10d4686c271a4
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pre_IND_MEX.unity
-    guid: 6dbb0077f65b6cc4298dc5d65db6d0e4
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Pre_IND_CHN.unity
-    guid: d177973ee1a369a4e9a8539f59623729
   - enabled: 1
     path: Assets/Scenes/BRA.unity
     guid: a741c98aac347ac46b5c3e8a6bdcc76e

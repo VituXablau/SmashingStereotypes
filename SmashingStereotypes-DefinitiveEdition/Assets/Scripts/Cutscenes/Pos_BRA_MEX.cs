@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class Pos_BRA_MEX : MonoBehaviour
 {
@@ -65,6 +68,8 @@ public class Pos_BRA_MEX : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
+        PhotonNetwork.NickName = "";
+        SceneManager.LoadScene("Lobby");
 
 
 

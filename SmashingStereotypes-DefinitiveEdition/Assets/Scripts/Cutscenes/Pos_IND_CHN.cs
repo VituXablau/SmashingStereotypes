@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class Pos_IND_CHN : MonoBehaviour
 {
@@ -46,8 +49,11 @@ public class Pos_IND_CHN : MonoBehaviour
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
         dialog.text = "...Chat, o que é startup?...";
         CHN.transform.localScale = new Vector3(1, 1, 1);
+       
         yield return new WaitForSeconds(waitTime);
 
+        PhotonNetwork.NickName = "";
+        SceneManager.LoadScene("Lobby");
 
     }
 }

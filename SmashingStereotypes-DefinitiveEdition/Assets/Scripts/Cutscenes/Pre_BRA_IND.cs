@@ -8,6 +8,8 @@ using Photon.Realtime;
 public class Pre_Bra_IND : MonoBehaviour
 {
     public GameObject BRA, IND, DIA, VS, BG, WS;
+        int random;
+
     public AudioSource audioSource;
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
@@ -88,13 +90,7 @@ public class Pre_Bra_IND : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-
-        int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
-
-        PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
-
-
-
+        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
     }
 }

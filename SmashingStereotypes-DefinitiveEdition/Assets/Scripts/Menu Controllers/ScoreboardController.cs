@@ -17,9 +17,9 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
         string playerWin = null;
 
         //Verificando quem foi o vencedor
-        if(GameManager.Instance.p1Lives >= 0)
+        if (GameManager.Instance.p1Lives >= 0)
             playerWin = GameManager.Instance.p1Name;
-        else if(GameManager.Instance.p2Lives >= 0)
+        else if (GameManager.Instance.p2Lives >= 0)
             playerWin = GameManager.Instance.p2Name;
 
         //Armazenando o nome dos dois jogadores
@@ -95,8 +95,45 @@ public class ScoreboardController : MonoBehaviourPunCallbacks
     //Método que sai da sala e limpa o Nickname dos jogadores
     public void LeaveRoom()
     {
-        PhotonNetwork.NickName = "";
-        SceneManager.LoadScene("Lobby");
+        //PhotonNetwork.NickName = "";
+        //SceneManager.LoadScene("Lobby");
+
+        if ((GameManager.Instance.p1Name == "BRA") && (GameManager.Instance.p2Name == "CHN") || (GameManager.Instance.p1Name == "CHN") && (GameManager.Instance.p2Name == "BRA"))
+        {
+
+            PhotonNetwork.LoadLevel("Pos_BRA_CHN");
+        }
+        else if ((GameManager.Instance.p1Name == "BRA") && (GameManager.Instance.p2Name == "IND") || (GameManager.Instance.p1Name == "IND") && (GameManager.Instance.p2Name == "BRA"))
+        {
+
+
+
+            PhotonNetwork.LoadLevel("Pos_BRA_IND");
+        }
+        else if ((GameManager.Instance.p1Name == "BRA") && (GameManager.Instance.p2Name == "MEX") || (GameManager.Instance.p2Name == "MEX") && (GameManager.Instance.p2Name == "BRA"))
+        {
+
+
+            PhotonNetwork.LoadLevel("Pos_BRA_MEX");
+        }
+        else if ((GameManager.Instance.p1Name == "IND") && (GameManager.Instance.p2Name == "MEX") || (GameManager.Instance.p1Name == "MEX") && (GameManager.Instance.p2Name == "IND"))
+        {
+
+
+            PhotonNetwork.LoadLevel("Pos_IND_MEX");
+        }
+        else if ((GameManager.Instance.p1Name == "IND") && (GameManager.Instance.p2Name == "CHN") || (GameManager.Instance.p1Name == "CHN") && (GameManager.Instance.p2Name == "IND"))
+        {
+
+            PhotonNetwork.LoadLevel("Pos_IND_CHN");
+        }
+        else if ((GameManager.Instance.p1Name == "MEX") && (GameManager.Instance.p2Name == "CHN") || (GameManager.Instance.p1Name == "CHN") && (GameManager.Instance.p2Name == "MEX"))
+        {
+
+
+            PhotonNetwork.LoadLevel("Pos_MEX_CHN");
+        }
+
         Debug.Log("Saindo");
     }
 }

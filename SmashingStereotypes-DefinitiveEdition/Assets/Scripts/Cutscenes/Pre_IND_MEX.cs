@@ -10,7 +10,7 @@ public class Pre_IND_MEX : MonoBehaviour
     // Start is called before the first frame update
     // Start is called before the first frame update
     public GameObject IND, MEX, DIA, VS, BG, WS;
-
+    int random;
     public AudioSource audioSource;
 
     public AudioClip vsMusic;
@@ -78,9 +78,9 @@ public class Pre_IND_MEX : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-        int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
 
-        PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
+        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+
 
 
 

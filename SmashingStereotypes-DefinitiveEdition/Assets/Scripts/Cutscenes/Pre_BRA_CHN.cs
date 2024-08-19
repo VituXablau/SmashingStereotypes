@@ -67,10 +67,8 @@ public class Pre_BRA_CHN : MonoBehaviour
          yield return new WaitForSeconds(waitTime);
 
          WS.GetComponent<Animator>().SetTrigger("Whiten");
-
-         int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
-
-         PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
+         
+         PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
          
 

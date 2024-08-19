@@ -8,6 +8,7 @@ using Photon.Realtime;
 public class Pre_MEX_CHN : MonoBehaviour
 {
     public GameObject MEX, CHN, DIA, VS, BG, WS;
+    int random;
     public AudioSource audioSource;
 
     public AudioClip vsMusic;
@@ -64,9 +65,8 @@ public class Pre_MEX_CHN : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-        int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
+          PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
-        PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
 
 
     }

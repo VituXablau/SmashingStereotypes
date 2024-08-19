@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class Pos_BRA_IND : MonoBehaviour
 {
@@ -73,16 +76,10 @@ public class Pos_BRA_IND : MonoBehaviour
         BRA.GetComponent<Animator>().SetTrigger("Embarassed");
         dialog.text = "Okay, foi mal a precipitação mas eu odeio startup.";
              
-
-
         yield return new WaitForSeconds(waitTime);
 
-
-
-
-
-
-
+         PhotonNetwork.NickName = "";
+        SceneManager.LoadScene("Lobby");
 
 
 
