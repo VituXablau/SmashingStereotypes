@@ -34,7 +34,7 @@ public class Pre_IND_CHN : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         yield return new WaitForSeconds(waitTime);
@@ -42,7 +42,7 @@ public class Pre_IND_CHN : MonoBehaviour
         DIA.GetComponent<Animator>().SetTrigger("Right");
         IND.GetComponent<Animator>().SetTrigger("Angry");
         CHN.GetComponent<Animator>().SetTrigger("Smug");
-        dialog.text = "Quê?! Faz um ritual samurai pra mim aí então, dragão!";
+        dialog.text = "Quê?! Que palhaçada é essa? Faz um ritual de samurai aí então, dragão!";
 
         yield return new WaitForSeconds(waitTime);
 
@@ -50,7 +50,15 @@ public class Pre_IND_CHN : MonoBehaviour
         IND.GetComponent<Animator>().SetTrigger("Angry");
         CHN.GetComponent<Animator>().SetTrigger("Angry");
         CHN.transform.localScale = new Vector3(-1, 1, 1);
-        dialog.text = "#*%@$!";
+        dialog.text = "Você me chamou de dragão?!";
+
+            yield return new WaitForSeconds(waitTime);
+
+        DIA.GetComponent<Animator>().SetTrigger("Right");
+        IND.GetComponent<Animator>().SetTrigger("Angry");
+        CHN.GetComponent<Animator>().SetTrigger("Angry");
+        CHN.transform.localScale = new Vector3(-1, 1, 1);
+        dialog.text = "Quer que eu repita?!";
 
         yield return new WaitForSeconds(waitTime / 2f);
 

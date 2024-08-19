@@ -33,7 +33,7 @@ public class Pre_Bra_IND : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         DIA.GetComponent<Animator>().SetTrigger("Left");
@@ -71,7 +71,7 @@ public class Pre_Bra_IND : MonoBehaviour
         DIA.GetComponent<Animator>().SetTrigger("Right");
         BRA.GetComponent<Animator>().SetTrigger("Angry");
         IND.GetComponent<Animator>().SetTrigger("Angry");
-        dialog.text = "Eu não perguntei, @#$!@!$!";
+        dialog.text = "Eu não perguntei, tio!";
 
 
         yield return new WaitForSeconds(waitTime / 2f);

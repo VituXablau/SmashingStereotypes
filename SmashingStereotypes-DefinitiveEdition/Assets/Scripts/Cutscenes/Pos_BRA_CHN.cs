@@ -23,7 +23,7 @@ public class Pos_BRA_CHN : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         DIA.GetComponent<Animator>().SetTrigger("Left");
@@ -36,15 +36,15 @@ public class Pos_BRA_CHN : MonoBehaviour
         DIA.GetComponent<Animator>().SetTrigger("Right");
         BRA.GetComponent<Animator>().SetTrigger("Embarassed");
         CHN.GetComponent<Animator>().SetTrigger("Smug");
-        dialog.text = "Meu... Meu número? Tá. Eu deixo você me seguir. Se você prometer nunca mais me chamar de \"japa\" de novo.";
+        dialog.text = "Tá, eu te dou meu número, só... nunca mais me chame daquilo de novo.";
 
         yield return new WaitForSeconds(waitTime);
 
 
         DIA.GetComponent<Animator>().SetTrigger("Left");
-        BRA.GetComponent<Animator>().SetTrigger("Happy");
+        BRA.GetComponent<Animator>().SetTrigger("Embarassed");
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
-        dialog.text = "Eu prometo!!!";
+        dialog.text = "Ok, eu prometo!";
 
         yield return new WaitForSeconds(waitTime);
 

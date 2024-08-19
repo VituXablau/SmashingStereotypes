@@ -39,7 +39,7 @@ public class Pre_MEX_CHN : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         yield return new WaitForSeconds(waitTime);
@@ -48,7 +48,7 @@ public class Pre_MEX_CHN : MonoBehaviour
         CHN.GetComponent<Animator>().SetTrigger("Angry");
         MEX.GetComponent<Animator>().SetTrigger("Angry");
         CHN.transform.localScale = new Vector3(-1, 1, 1);
-        dialog.text = "O que você quer, projeto de muralha?!";
+        dialog.text = "O que você quer, projeto de muralha?! Chega perto de mim aí pra você ver o \"XD\"!";
 
         yield return new WaitForSeconds(waitTime / 2f);
         DIA.SetActive(false);

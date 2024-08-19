@@ -28,7 +28,7 @@ public class Pos_BRA_MEX : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
 

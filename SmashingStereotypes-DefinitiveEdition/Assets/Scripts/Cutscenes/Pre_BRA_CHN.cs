@@ -29,7 +29,7 @@ public class Pre_BRA_CHN : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         DIA.GetComponent<Animator>().SetTrigger("Left");

@@ -36,7 +36,7 @@ public class Pre_IND_MEX : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         yield return new WaitForSeconds(waitTime);

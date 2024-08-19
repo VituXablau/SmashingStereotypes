@@ -28,26 +28,26 @@ public class Pos_IND_CHN : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         yield return new WaitForSeconds(waitTime);
 
         DIA.GetComponent<Animator>().SetTrigger("Right");
         IND.GetComponent<Animator>().SetTrigger("Smug");
-        dialog.text = "Se você fizer propaganda da minha startup talvez eu considere não derrubar a sua conta.";
+        dialog.text = "É. Foi terrível. Mas eu confesso que reagi de forma exagerada também.";
 
         yield return new WaitForSeconds(waitTime);
 
         DIA.GetComponent<Animator>().SetTrigger("Left");
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
-        dialog.text = "Uhh, aceito?";
+        dialog.text = "Ok, amigos?";
 
         yield return new WaitForSeconds(waitTime);
 
-        DIA.GetComponent<Animator>().SetTrigger("Left");
+        DIA.GetComponent<Animator>().SetTrigger("Right");
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
-        dialog.text = "...Chat, o que é startup?...";
+        dialog.text = "...Uh, não?!";
         CHN.transform.localScale = new Vector3(1, 1, 1);
        
         yield return new WaitForSeconds(waitTime);

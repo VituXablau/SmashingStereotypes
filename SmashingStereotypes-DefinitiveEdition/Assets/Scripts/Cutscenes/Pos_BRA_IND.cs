@@ -27,7 +27,7 @@ public class Pos_BRA_IND : MonoBehaviour
 
     }
 
-    IEnumerator Cutscene(float waitTime = 3f)
+    IEnumerator Cutscene(float waitTime = 5f)
     {
 
         DIA.GetComponent<Animator>().SetTrigger("Left");
@@ -57,7 +57,7 @@ public class Pos_BRA_IND : MonoBehaviour
         DIA.GetComponent<Animator>().SetTrigger("Right");
         BRA.GetComponent<Animator>().SetTrigger("Embarassed");
         IND.GetComponent<Animator>().SetTrigger("Embarassed");
-        dialog.text = "Eu prefiro vôlei...";
+        dialog.text = "Ok, eu admito que presumi que você tava dando em cima de mim por que indianos tem essa fama... Desculpa";
         IND.transform.localScale = new Vector3(1, 1, 1);
 
 
@@ -65,16 +65,16 @@ public class Pos_BRA_IND : MonoBehaviour
 
         DIA.GetComponent<Animator>().SetTrigger("Left");
         IND.GetComponent<Animator>().SetTrigger("Smug");
-        dialog.text = "Tá, eu posso forçar meus estagiários a criarem um grupo de vôlei.";
+        dialog.text = "Ok, desculpe por achar que só por ser Brasileira, você é especialista em futebol.";
     
 
 
         yield return new WaitForSeconds(waitTime);
 
         DIA.GetComponent<Animator>().SetTrigger("Right");
-        IND.GetComponent<Animator>().SetTrigger("Embarassed");
-        BRA.GetComponent<Animator>().SetTrigger("Embarassed");
-        dialog.text = "Okay, foi mal a precipitação mas eu odeio startup.";
+        IND.GetComponent<Animator>().SetTrigger("Default");
+        BRA.GetComponent<Animator>().SetTrigger("Happy");
+        dialog.text = "Ha, na verdade eu amo futebol.";
              
         yield return new WaitForSeconds(waitTime);
 
