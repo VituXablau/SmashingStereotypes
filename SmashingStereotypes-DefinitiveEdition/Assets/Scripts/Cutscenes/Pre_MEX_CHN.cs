@@ -2,15 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class Pre_MEX_CHN : MonoBehaviour
 {
-    public GameObject MEX, CHN, DIA;
+    public GameObject MEX, CHN, DIA, VS, BG, WS;
+    public AudioSource audioSource;
+
+    public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
     // Start is called before the first frame update
     void Start()
     {
+        vsMusic = Resources.Load<AudioClip>("Music_Vs");
+
+
+        audioSource = this.GetComponent<AudioSource>();
+
+
+        VS.SetActive(false);
+        WS.SetActive(false);
+
         DIA.GetComponent<Animator>().SetTrigger("Left");
         MEX.GetComponent<Animator>().SetTrigger("Angry");
         CHN.GetComponent<Animator>().SetTrigger("Smug");
@@ -35,7 +49,24 @@ public class Pre_MEX_CHN : MonoBehaviour
         CHN.transform.localScale = new Vector3(-1, 1, 1);
         dialog.text = "O que você quer, projeto de muralha?!";
 
+        yield return new WaitForSeconds(waitTime / 2f);
+        DIA.SetActive(false);
+        MEX.SetActive(false);
+        CHN.SetActive(false);
+        BG.SetActive(false);
+        VS.SetActive(true);
+        WS.SetActive(true);
+        WS.GetComponent<Animator>().SetTrigger("Blink");
+
+        audioSource.PlayOneShot(vsMusic);
+
         yield return new WaitForSeconds(waitTime);
+
+        WS.GetComponent<Animator>().SetTrigger("Whiten");
+
+        int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
+
+        PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
 
 
     }

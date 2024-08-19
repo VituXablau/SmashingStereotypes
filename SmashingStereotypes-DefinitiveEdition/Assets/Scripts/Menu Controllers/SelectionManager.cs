@@ -51,20 +51,43 @@ public class SelectionManager : MonoBehaviour
     {
         //Aleatorizando a arena de batalha com base nos personagens escolhidos
         //int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
-         //PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
+        //PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
 
 
-       if ((player1.NickName == "CHN") && (player2.NickName == "BRA") || (player1.NickName == "BRA") && (player2.NickName == "CHN"))
-       {
+        if ((player1.NickName == "BRA") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "BRA"))
+        {
             PhotonNetwork.LoadLevel("Pre_BRA_CHN");
-       }
+        }
+        else if ((player1.NickName == "BRA") && (player2.NickName == "IND") || (player1.NickName == "IND") && (player2.NickName == "BRA"))
+        {
+            PhotonNetwork.LoadLevel("Pre_BRA_IND");
+        }
+        else if ((player1.NickName == "BRA") && (player2.NickName == "MEX") || (player1.NickName == "MEX") && (player2.NickName == "BRA"))
+        {
+            PhotonNetwork.LoadLevel("Pre_BRA_MEX");
+        }
+        else if ((player1.NickName == "IND") && (player2.NickName == "MEX") || (player1.NickName == "MEX") && (player2.NickName == "IND"))
+        {
+            PhotonNetwork.LoadLevel("Pre_IND_MEX");
+        }
+        else if ((player1.NickName == "IND") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "IND"))
+        {
+            PhotonNetwork.LoadLevel("Pre_IND_CHN");
+        }
+           else if ((player1.NickName == "MEX") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "MEX"))
+        {
+            PhotonNetwork.LoadLevel("Pre_MEX_CHN");
+        }
+
+
+
 
         // foreach (Player player in PhotonNetwork.PlayerList)
         // {
         //     if (PhotonNetwork.PlayerList.Contains("BRA"))
         // }
-       
-        
+
+
     }
     //Método do botão de voltar para o lobby
     public void BackToLobby()

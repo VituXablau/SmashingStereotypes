@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class Pre_BRA_CHN : MonoBehaviour
 {
-    public GameObject BRA, CHN, DIA;
+    public GameObject BRA, CHN, DIA, VS, BG, WS;
     public TextMeshProUGUI dialog;
+
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        VS.SetActive(false);
+        WS.SetActive(false);
         StartCoroutine(Cutscene());
     }
 
@@ -41,7 +46,7 @@ public class Pre_BRA_CHN : MonoBehaviour
         DIA.GetComponent<Animator>().SetTrigger("Right");
         BRA.GetComponent<Animator>().SetTrigger("Embarassed");
         CHN.GetComponent<Animator>().SetTrigger("Angry");
-        dialog.text = "Quê?! Do que você me chamou?! \"japa\"? Eu sou chinesa, sua baranga dançarina de carnaval!";
+        dialog.text = "Quê?! Do que você me chamou?! Eu sou chinesa, sua baranga dançarina de carnaval!";
 
 
 
@@ -51,7 +56,23 @@ public class Pre_BRA_CHN : MonoBehaviour
         BRA.GetComponent<Animator>().SetTrigger("Embarassed");
         dialog.text = "Droga... Esse não foi meu melhor flerte...";
 
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(waitTime / 2f);
+        DIA.SetActive(false);
+        BRA.SetActive(false);
+        CHN.SetActive(false);
+        BG.SetActive(false);
+        VS.SetActive(true);
+        WS.SetActive(true);
+
+         yield return new WaitForSeconds(waitTime);
+
+         WS.GetComponent<Animator>().SetTrigger("Whiten");
+
+         int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
+
+         PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
+
+         
 
 
 

@@ -48,6 +48,7 @@ public class Pos_IND_MEX : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
+        
         DIA.GetComponent<Animator>().SetTrigger("Right");
         IND.GetComponent<Animator>().SetTrigger("Angry");
         MEX.GetComponent<Animator>().SetTrigger("Bump");
