@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/CardsMenu.unity
     guid: 472f93c39c53bd4488a78137de920f60
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/Pre_BRA_CHN.unity
+    guid: e35a750c8fb78f0448e335045589f0e9
+  - enabled: 1
     path: Assets/Scenes/BRA.unity
     guid: a741c98aac347ac46b5c3e8a6bdcc76e
   - enabled: 1

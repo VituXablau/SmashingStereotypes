@@ -50,9 +50,21 @@ public class SelectionManager : MonoBehaviour
     public void StartGame()
     {
         //Aleatorizando a arena de batalha com base nos personagens escolhidos
-        int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
+        //int indexMap = UnityEngine.Random.Range(0, PhotonNetwork.PlayerList.Length);
+         //PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
 
-        PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
+
+       if ((player1.NickName == "CHN") && (player2.NickName == "BRA") || (player1.NickName == "BRA") && (player2.NickName == "CHN"))
+       {
+            PhotonNetwork.LoadLevel("Pre_BRA_CHN");
+       }
+
+        // foreach (Player player in PhotonNetwork.PlayerList)
+        // {
+        //     if (PhotonNetwork.PlayerList.Contains("BRA"))
+        // }
+       
+        
     }
     //Método do botão de voltar para o lobby
     public void BackToLobby()
