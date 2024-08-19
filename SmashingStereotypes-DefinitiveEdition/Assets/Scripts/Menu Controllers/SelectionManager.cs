@@ -12,8 +12,8 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private Button braButton, chnButton, indButton, mexButton, startButton;
     //Armazenando os jogadores
     private Player player1, player2;
-
     public static string nextMap;
+    public GameObject wH1, wH2, wH3, wH4, bH1, bH2, bH3, bH4, warning;
 
     int random;
 
@@ -21,10 +21,102 @@ public class SelectionManager : MonoBehaviour
     private void Start()
     {
         startButton.gameObject.SetActive(false);
+        warning.SetActive(false);
+
+        wH1.SetActive(false);
+        wH2.SetActive(false);
+        wH3.SetActive(false);
+        wH4.SetActive(false);
+        bH1.SetActive(false);
+        bH2.SetActive(false);
+        bH3.SetActive(false);
+        bH4.SetActive(false);
+
+    }
+
+    void SelectionVisual()
+    {
+        if (player1 != null)
+        {
+            if (player1.NickName == "BRA")
+            {
+                wH1.SetActive(true);
+            }
+            else
+            {
+                wH1.SetActive(false);
+            }
+            if (player1.NickName == "CHN")
+            {
+                wH2.SetActive(true);
+            }
+            else
+            {
+                wH2.SetActive(false);
+            }
+            if (player1.NickName == "IND")
+            {
+                wH3.SetActive(true);
+            }
+            else
+            {
+                wH3.SetActive(false);
+            }
+            if (player1.NickName == "MEX")
+            {
+                wH4.SetActive(true);
+            }
+            else
+            {
+                wH4.SetActive(false);
+            }
+        }
+
+        if (player2 != null)
+        {
+            if (player2.NickName == "BRA")
+            {
+                bH1.SetActive(true);
+            }
+            else
+            {
+                bH1.SetActive(false);
+            }
+            if (player2.NickName == "CHN")
+            {
+                bH2.SetActive(true);
+            }
+            else
+            {
+                bH2.SetActive(false);
+            }
+            if (player2.NickName == "IND")
+            {
+                bH3.SetActive(true);
+            }
+            else
+            {
+                bH3.SetActive(false);
+            }
+            if (player2.NickName == "MEX")
+            {
+                bH4.SetActive(true);
+            }
+            else
+            {
+                bH4.SetActive(false);
+            }
+        }
+
+
+
+
     }
 
     private void Update()
     {
+        SelectionVisual();
+
         //Verificando se existem dois jogadores na cena, se sim então atribui eles às variáveis de jogadores
         if (PhotonNetwork.PlayerList.Length == 2)
         {
@@ -58,7 +150,11 @@ public class SelectionManager : MonoBehaviour
         //PhotonNetwork.LoadLevel(PhotonNetwork.PlayerList[indexMap].NickName);
 
         //  nextMap = PhotonNetwork.PlayerList[indexMap].NickName;
-
+        if (player1.NickName == player2.NickName)
+        {
+            warning.SetActive(true);
+        }
+        else
 
         if ((player1.NickName == "BRA") && (player2.NickName == "CHN") || (player1.NickName == "CHN") && (player2.NickName == "BRA"))
         {
@@ -77,7 +173,7 @@ public class SelectionManager : MonoBehaviour
             }
             PhotonNetwork.LoadLevel("Pre_BRA_CHN");
 
-            
+
         }
         else if ((player1.NickName == "BRA") && (player2.NickName == "IND") || (player1.NickName == "IND") && (player2.NickName == "BRA"))
         {

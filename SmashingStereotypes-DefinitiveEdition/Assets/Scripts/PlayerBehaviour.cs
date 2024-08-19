@@ -427,9 +427,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         // Executando a lógica de escalonamento da força que projeta o personagem para longe e retornando o valor multiplicador da força
         float knockbackMultiplier = Mathf.Pow(2f, (float)hitPoints / (float)maxHitPoints) - 1f;
-        //knockbackMultiplier = Mathf.Clamp(knockbackMultiplier, 0f, 2.5f);
-        // uhh miau !! xd siga em frente nada para si ver aqui !!
-        knockbackMultiplier = Mathf.Clamp(knockbackMultiplier, 0f, 9.99f);
+        knockbackMultiplier = Mathf.Clamp(knockbackMultiplier, 0f, 2.5f);
         hitForce = baseHitForce * knockbackMultiplier;
         float knockbackPercentage = knockbackMultiplier * 100f;
         return (int)knockbackPercentage;

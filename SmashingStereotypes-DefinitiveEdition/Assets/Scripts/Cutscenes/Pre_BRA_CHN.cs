@@ -15,7 +15,9 @@ public class Pre_BRA_CHN : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        audioSource = GetComponent<AudioSource>();
+        
         VS.SetActive(false);
         WS.SetActive(false);
         StartCoroutine(Cutscene());
@@ -74,7 +76,7 @@ public class Pre_BRA_CHN : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-           if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 
