@@ -11,16 +11,9 @@ public class Pos_BRA_CHN : MonoBehaviour
     public GameObject BRA, CHN, DIA;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
