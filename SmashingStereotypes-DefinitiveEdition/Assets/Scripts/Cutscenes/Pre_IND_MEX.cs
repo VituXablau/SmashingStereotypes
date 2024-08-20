@@ -7,7 +7,6 @@ using Photon.Realtime;
 
 public class Pre_IND_MEX : MonoBehaviour
 {
-  
     public GameObject IND, MEX, DIA, VS, BG, WS;
     int random;
     public AudioSource audioSource;
@@ -15,7 +14,6 @@ public class Pre_IND_MEX : MonoBehaviour
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         vsMusic = Resources.Load<AudioClip>("Music_Vs");
@@ -28,12 +26,6 @@ public class Pre_IND_MEX : MonoBehaviour
         MEX.GetComponent<Animator>().SetTrigger("Happy");
         dialog.text = "TIRO É O ÚNICO ESPORTE QUE PRESTA!!! VAI MÉXICOOOOO!!!!!";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -77,8 +69,8 @@ public class Pre_IND_MEX : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-           if (PhotonNetwork.IsMasterClient)
-        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 
 

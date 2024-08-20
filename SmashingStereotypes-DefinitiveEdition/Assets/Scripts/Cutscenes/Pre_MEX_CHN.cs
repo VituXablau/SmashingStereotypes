@@ -14,7 +14,6 @@ public class Pre_MEX_CHN : MonoBehaviour
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         vsMusic = Resources.Load<AudioClip>("Music_Vs");
@@ -31,12 +30,6 @@ public class Pre_MEX_CHN : MonoBehaviour
         CHN.GetComponent<Animator>().SetTrigger("Smug");
         dialog.text = "Olha o carro do taco, galera! Será que ele faz amostra grátis? XD";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -65,8 +58,8 @@ public class Pre_MEX_CHN : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-               if (PhotonNetwork.IsMasterClient)
-          PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 
 

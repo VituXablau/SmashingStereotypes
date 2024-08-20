@@ -8,11 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class Pos_IND_CHN : MonoBehaviour
 {
-
     public GameObject IND, CHN, DIA;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         DIA.GetComponent<Animator>().SetTrigger("Left");
@@ -20,12 +18,6 @@ public class Pos_IND_CHN : MonoBehaviour
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
         dialog.text = "Okay, talvez essa não foi a melhor das minhas ideias...";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -49,7 +41,7 @@ public class Pos_IND_CHN : MonoBehaviour
         CHN.GetComponent<Animator>().SetTrigger("Embarassed");
         dialog.text = "...Uh, não?!";
         CHN.transform.localScale = new Vector3(1, 1, 1);
-       
+
         yield return new WaitForSeconds(waitTime);
 
         PhotonNetwork.NickName = "";

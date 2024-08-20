@@ -7,14 +7,12 @@ using Photon.Realtime;
 
 public class Pre_IND_CHN : MonoBehaviour
 {
-
     public GameObject IND, CHN, DIA, VS, BG, WS;
     int random;
     public AudioSource audioSource;
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         vsMusic = Resources.Load<AudioClip>("Music_Vs");
@@ -26,12 +24,6 @@ public class Pre_IND_CHN : MonoBehaviour
         CHN.GetComponent<Animator>().SetTrigger("Smug");
         dialog.text = "Oiii internete! Será que aquele indiano aqui vende curry?! Vamos perguntar, haha!!";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -52,7 +44,7 @@ public class Pre_IND_CHN : MonoBehaviour
         CHN.transform.localScale = new Vector3(-1, 1, 1);
         dialog.text = "Você me chamou de dragão?!";
 
-            yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         DIA.GetComponent<Animator>().SetTrigger("Right");
         IND.GetComponent<Animator>().SetTrigger("Angry");
@@ -77,8 +69,8 @@ public class Pre_IND_CHN : MonoBehaviour
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
 
-           if (PhotonNetwork.IsMasterClient)
-        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 
     }

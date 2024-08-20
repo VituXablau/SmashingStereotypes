@@ -7,13 +7,11 @@ using Photon.Realtime;
 
 public class Pre_BRA_MEX : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject BRA, MEX, DIA, VS, BG, WS;
     public AudioSource audioSource;
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         vsMusic = Resources.Load<AudioClip>("Music_Vs");
@@ -25,12 +23,6 @@ public class Pre_BRA_MEX : MonoBehaviour
         MEX.GetComponent<Animator>().SetTrigger("Popcorn");
         dialog.text = "É meio difícil andar com esse baldão de pipoca, mas não dá pra ver ginástica sem pipoca. É muito chato. Imagina fazer ginástica.";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -76,7 +68,7 @@ public class Pre_BRA_MEX : MonoBehaviour
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
-            if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
             PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 

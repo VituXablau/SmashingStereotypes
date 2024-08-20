@@ -11,7 +11,6 @@ public class Pos_MEX_CHN : MonoBehaviour
   public GameObject MEX, CHN, DIA;
   public TextMeshProUGUI dialog;
 
-  // Start is called before the first frame update
   void Start()
   {
     DIA.GetComponent<Animator>().SetTrigger("Left");
@@ -19,12 +18,6 @@ public class Pos_MEX_CHN : MonoBehaviour
     CHN.GetComponent<Animator>().SetTrigger("Sad");
     dialog.text = "Vo-você... realmente acha... que eu sou um projeto de muralha?...";
     StartCoroutine(Cutscene());
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
   }
 
   IEnumerator Cutscene(float waitTime = 5f)
@@ -45,7 +38,7 @@ public class Pos_MEX_CHN : MonoBehaviour
     yield return new WaitForSeconds(waitTime);
 
     MEX.GetComponent<Animator>().SetTrigger("Default");
-     CHN.GetComponent<Animator>().SetTrigger("Embarassed");
+    CHN.GetComponent<Animator>().SetTrigger("Embarassed");
     DIA.GetComponent<Animator>().SetTrigger("Right");
     dialog.text = "Tá, talvez você não seja tão muralha assim.";
 

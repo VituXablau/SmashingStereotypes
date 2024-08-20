@@ -11,20 +11,13 @@ public class Pos_BRA_IND : MonoBehaviour
     public GameObject BRA, IND, DIA;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
-         DIA.GetComponent<Animator>().SetTrigger("Left");
+        DIA.GetComponent<Animator>().SetTrigger("Left");
         BRA.GetComponent<Animator>().SetTrigger("Angry");
         IND.GetComponent<Animator>().SetTrigger("Angry");
         dialog.text = "Que droga de luta imaginária foi aquela?";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -66,7 +59,7 @@ public class Pos_BRA_IND : MonoBehaviour
         DIA.GetComponent<Animator>().SetTrigger("Left");
         IND.GetComponent<Animator>().SetTrigger("Smug");
         dialog.text = "Ok, desculpe por achar que só por ser Brasileira, você é especialista em futebol.";
-    
+
 
 
         yield return new WaitForSeconds(waitTime);
@@ -75,10 +68,10 @@ public class Pos_BRA_IND : MonoBehaviour
         IND.GetComponent<Animator>().SetTrigger("Default");
         BRA.GetComponent<Animator>().SetTrigger("Happy");
         dialog.text = "Ha, na verdade eu amo futebol.";
-             
+
         yield return new WaitForSeconds(waitTime);
 
-         PhotonNetwork.NickName = "";
+        PhotonNetwork.NickName = "";
         SceneManager.LoadScene("Lobby");
 
 

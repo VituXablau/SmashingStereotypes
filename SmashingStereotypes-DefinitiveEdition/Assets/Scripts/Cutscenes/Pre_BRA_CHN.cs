@@ -12,21 +12,13 @@ public class Pre_BRA_CHN : MonoBehaviour
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
-
-    // Start is called before the first frame update
     void Start()
-    {   
+    {
         audioSource = GetComponent<AudioSource>();
-        
+
         VS.SetActive(false);
         WS.SetActive(false);
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -77,7 +69,7 @@ public class Pre_BRA_CHN : MonoBehaviour
         WS.GetComponent<Animator>().SetTrigger("Whiten");
 
         if (PhotonNetwork.IsMasterClient)
-        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+            PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
 
 

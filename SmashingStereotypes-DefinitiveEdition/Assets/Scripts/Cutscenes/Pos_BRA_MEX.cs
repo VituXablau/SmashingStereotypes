@@ -8,11 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class Pos_BRA_MEX : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject BRA, MEX, DIA;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         DIA.GetComponent<Animator>().SetTrigger("Right");
@@ -20,12 +18,6 @@ public class Pos_BRA_MEX : MonoBehaviour
         MEX.GetComponent<Animator>().SetTrigger("Popcorn");
         dialog.text = "Parando pra pensar, esse balde de pipoca é grande de mais pra um. Tem certeza que não quer dividir?";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)

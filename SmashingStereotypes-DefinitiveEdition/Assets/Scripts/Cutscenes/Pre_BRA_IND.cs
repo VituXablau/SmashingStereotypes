@@ -8,13 +8,12 @@ using Photon.Realtime;
 public class Pre_Bra_IND : MonoBehaviour
 {
     public GameObject BRA, IND, DIA, VS, BG, WS;
-        int random;
+    int random;
 
     public AudioSource audioSource;
     public AudioClip vsMusic;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         vsMusic = Resources.Load<AudioClip>("Music_Vs");
@@ -25,12 +24,6 @@ public class Pre_Bra_IND : MonoBehaviour
         BRA.GetComponent<Animator>().SetTrigger("Happy");
         IND.GetComponent<Animator>().SetTrigger("Default");
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
@@ -89,9 +82,9 @@ public class Pre_Bra_IND : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         WS.GetComponent<Animator>().SetTrigger("Whiten");
-        
-           if (PhotonNetwork.IsMasterClient)
-        PhotonNetwork.LoadLevel(SelectionManager.nextMap);
+
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.LoadLevel(SelectionManager.nextMap);
 
     }
 }

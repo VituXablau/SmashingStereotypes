@@ -8,13 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class Pos_IND_MEX : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // Start is called before the first frame update
-    // Start is called before the first frame update
     public GameObject IND, MEX, DIA;
     public TextMeshProUGUI dialog;
 
-    // Start is called before the first frame update
     void Start()
     {
         DIA.GetComponent<Animator>().SetTrigger("Left");
@@ -22,12 +18,6 @@ public class Pos_IND_MEX : MonoBehaviour
         MEX.GetComponent<Animator>().SetTrigger("Embarassed");
         dialog.text = "Okay, foi mal por me exaltar. Eu odeio quando me mandam calar a boca.";
         StartCoroutine(Cutscene());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator Cutscene(float waitTime = 5f)
